@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ql.dao.ISys_roleDAO">
+
+
+    <select id="getAllList" resultType="Sys_privilege">
+        SELECT * from tms.sys_privilege
+  </select>
+
+
+    <select id="getRoleTreeByRoleId" resultType="Sys_privilege">
+      SELECT * FROM sys_privilege WHERE id
+    IN (
+      SELECT privilegeid FROM sys_role_privilege
+         WHERE roleid=#{roleid}
+       )
+    </select>
+
+
+    <select id="getListing" resultType="Sys_role">
+      SELECT * from sys_role
+    </select>
+</mapper>

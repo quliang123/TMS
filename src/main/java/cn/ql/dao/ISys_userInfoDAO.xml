@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ql.dao.ISys_userInfoDAO">
+    <!--插入查询+外部的数据-->
+    <insert id="savePrivilege">
+           insert into sys_role_privilege(privilegeid,roleid) select #{param2},roleid from sys_user_role where userid =#{param1}
+      </insert>
+
+    <delete id="delPrivilegeByUserId">
+         delete from sys_role_privilege where roleid = #{roleid}
+     </delete>
+
+    <insert id="addUser">
+     insert into sys_userinfo(uname,upassword) value(#{uname},#{upassword})
+    </insert>
+
+
+    <select id="getUserListByRid" resultType="Sys_userInfo">
+        select * from sys_userinfo where uid in
+       (
+        select uid from sys_user_role where roleid =#{roleid}
+      )
+    </select>
+
+
+    <select id="getCount" resultType="java.lang.Integer">
+        SELECT COUNT(1) FROM tms.sys_userinfo ;
+    </select>
+
+    <select id="getUserInfoList" resultType="Sys_UserInfo">
+      select uid,uname from tms.sys_userinfo limit #{page},#{rows};
+  </select>
+
+
+    <select id="isLogin" resultType="Sys_userInfo">
+        SELECT * from tms.sys_userinfo WHERE uname=#{param1} and upassword=#{param2}
+    </select>
+
+    <select id="getPrivilegeByUid" resultType="Sys_privilege">
+    SELECT * from tms.sys_privilege WHERE id in (
+  SELECT privilegeid from sys_role_privilege WHERE roleid in(
+    SELECT roleid FROM sys_user_role WHERE userid = #{uid}
+  )
+)ORDER BY id
+    </select>
+
+</mapper>

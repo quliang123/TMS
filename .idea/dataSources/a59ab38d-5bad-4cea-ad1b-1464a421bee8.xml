@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="Tms@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="tms">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="activitidemo"/>
+    <schema id="4" parent="1" name="information_schema"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="test"/>
+    <schema id="8" parent="1" name="ssh"/>
+    <table id="9" parent="2" name="sys_privilege"/>
+    <table id="10" parent="2" name="sys_role"/>
+    <table id="11" parent="2" name="sys_role_privilege"/>
+    <table id="12" parent="2" name="sys_user_role"/>
+    <table id="13" parent="2" name="sys_userinfo"/>
+    <table id="14" parent="2" name="tms_computerroom"/>
+    <table id="15" parent="2" name="tms_dic"/>
+    <table id="16" parent="2" name="tms_dic_type"/>
+    <table id="17" parent="2" name="tms_lecturesked"/>
+    <table id="18" parent="2" name="tms_teacher"/>
+    <column id="19" parent="9" name="url">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="20" parent="9" name="name">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="21" parent="9" name="parent">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="22" parent="9" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="9" name="icon">
+      <Position>5</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <key id="24" parent="9" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="25" parent="10" name="rid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="26" parent="10" name="roleName">
+      <Position>2</Position>
+      <DataType>varchar(25)|0</DataType>
+    </column>
+    <key id="27" parent="10" name="PRIMARY">
+      <ColNames>rid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="28" parent="11" name="roleid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="29" parent="11" name="privilegeid">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="30" parent="12" name="userid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="31" parent="12" name="roleid">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="32" parent="13" name="uid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="33" parent="13" name="uname">
+      <Position>2</Position>
+      <DataType>varchar(25)|0</DataType>
+    </column>
+    <column id="34" parent="13" name="upassword">
+      <Position>3</Position>
+      <DataType>varchar(25)|0</DataType>
+    </column>
+    <key id="35" parent="13" name="PRIMARY">
+      <ColNames>uid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="36" parent="14" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="37" parent="14" name="name">
+      <Position>2</Position>
+      <Comment>机房名称</Comment>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <key id="38" parent="14" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="39" parent="15" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="40" parent="15" name="name">
+      <Position>2</Position>
+      <Comment>名称</Comment>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="41" parent="15" name="type">
+      <Position>3</Position>
+      <Comment>类型</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="42" parent="15" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="43" parent="16" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="44" parent="16" name="name">
+      <Position>2</Position>
+      <DataType>varbinary(15)|0</DataType>
+    </column>
+    <key id="45" parent="16" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="46" parent="17" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="47" parent="17" name="cname">
+      <Position>2</Position>
+      <Comment>因为业务不是很大，其实可以用班级编号来代替班级名称</Comment>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="48" parent="17" name="tid">
+      <Position>3</Position>
+      <Comment>tms_dic表中的老师编号</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="49" parent="17" name="timestate">
+      <Position>4</Position>
+      <Comment>1上午&amp;2下午</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="50" parent="17" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="51" parent="18" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="52" parent="18" name="name">
+      <Position>2</Position>
+      <Comment>教师名称</Comment>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="53" parent="18" name="cid">
+      <Position>3</Position>
+      <Comment>机房id</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="54" parent="18" name="tid">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="55" parent="18" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
